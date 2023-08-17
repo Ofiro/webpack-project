@@ -1,0 +1,122 @@
+
+[animate-section-left] {
+  clip-path: inset(0 100% 0 0); /* This hides the entire element initially */
+  transition: clip-path 1s; /* Smooth transition, adjust duration as needed */
+  opacity: 0;
+}
+[animate-fade-in] {
+  opacity: 0;
+}
+
+.lineParent {
+  overflow: hidden;
+}
+.wordParent {
+  overflow: hidden;
+}
+.button {
+  clip-path: inset(0 100% 0 0);  /* Starts fully masked (from the right) */
+}
+#arabicSVG path {
+  fill: currentColor;
+  clip-path: inset(0 100% 0 0); /* Hides the SVG initially */
+}
+/* Splide Styles */
+.splide__track {
+  overflow: visible;
+}
+
+/* Project Card Styles */
+.project-card-title {
+  max-width: calc(100% - 4rem);
+}
+
+/* Slide Blur Styles */
+.slide-blur {
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+}
+
+/* Card Overlay Styles */
+.card-overlay-blue {
+  .card-overlay-row {
+    $delay-increment: 0.1s;
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        transition-delay: $i * $delay-increment;
+      }
+    }
+  }
+}
+
+/* News Item Hover Styles */
+.news_item:hover {
+  .news_featured-image {
+    transform: scale(1.1);
+  }
+}
+.team_member_item {
+  width: calc(100% - 1.875rem);
+}
+
+.team_member_circle,
+.team_member-image-wrapper {
+  transition: 0.5s ease;
+
+  &.team_member_circle {
+    clip-path: ellipse(35% 35% at 50% 50%);
+  }
+
+  &.team_member-image-wrapper {
+    aspect-ratio: 1 / 1;
+
+    &:hover {
+      .team_member_circle {
+        clip-path: ellipse(74% 74% at 50% 50%);
+      }
+
+      .team_member_image {
+        transform: scale(1, 1);
+      }
+    }
+  }
+}
+.region_card_map_svg {
+  path {
+    stroke: #1a2f80;
+    stroke-width: 1px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.ishovered {
+    color: red;
+    path {
+      stroke: #fff;
+      color: #1a2f80;
+    }
+  }
+}
+
+.world_map_modded {
+  fill: currentColor;
+
+  path {
+    stroke: white;
+    stroke-width: 0.015rem;
+  }
+
+  .europe,
+  .Israel,
+  .Pakistan,
+  .Morocco,
+  .Bahrain,
+  .United-States,
+  .United-Arab-Emirates {
+    fill: #1a2f80;
+    opacity: 50%;
+  }
+
+  .active-region {
+    opacity: 100%;
+  }
+}
